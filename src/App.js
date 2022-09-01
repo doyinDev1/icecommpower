@@ -1,8 +1,22 @@
+import { Toaster } from 'react-hot-toast';
+import Login from '../src/pages/Login/index'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import User from './pages/User/User'
+import AdminDashboard from './pages/AdminDashboard/AdminDashboard';
 
 function App() {
   return (
     <div className="app">
-     Home
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Login />} />
+          <Route exact path="/user" element={<User />} />
+          <Route exact path="/admin" element={<AdminDashboard />} />
+        </Routes>
+      </Router>
+
+
+      <Toaster />
     </div>
   );
 }
