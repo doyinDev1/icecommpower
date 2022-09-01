@@ -1,14 +1,15 @@
 *,
 *::after,
 *::before {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
-	--color-blue: #003883;
-	--color-orange: #ff8200;
-	--color-green: #7ace1a;
-	--color-darkGreen: #003626;
+  --color-blue: #003883;
+  --color-orange: #ff8200;
+  --color-green: #7ace1a;
+  --color-darkGreen: #003626;
 }
