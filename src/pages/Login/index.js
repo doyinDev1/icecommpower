@@ -4,8 +4,10 @@ import classes from '../../styles/login.module.css'
 import { useState } from 'react';
 
 function Login() {
-	const [activeForm, setActiveForm] = useState('common');
 
+
+	const [activeForm, setActiveForm] = useState('common');
+	
 	const handleUserButton = (e) => {
 		//changes form from user to admin 
 		setActiveForm(e.target.id);
