@@ -1,0 +1,89 @@
+.DashboardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 5rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  /* border-bottom: 1px solid var(--color-blue); */
+  box-shadow: 0 10px 15px rgb(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  z-index: 90;
+}
+
+.DashboardHeader > img {
+  height: 100%;
+  margin-left: 20px;
+}
+
+.ActiveTab {
+  font-weight: 700;
+}
+
+.Logo {
+  width: 6rem;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+.DashboardNav {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.DashboardNav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.DashboardNav ul li {
+  padding: 0 1rem;
+  margin-bottom: 0;
+  cursor: pointer;
+  align-self: center;
+}
+
+/* export const Toggler = styled.div`` */
+
+.LogOutBtn {
+  background: transparent;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  padding: 3px 15px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: var(--color-blue);
+}
+
+.LogOutBtn:hover {
+  background-color: var(--color-orange);
+}
+@media screen and (max-width: 768px) {
+  .DashboardHeader {
+    padding: 0rem 1rem;
+    font-size: 9px;
+    height: 4.5rem;
+  }
+
+  .DashboardNav ul {
+    padding-left: 0px;
+  }
+  .DashboardNav ul li {
+    line-height: 1;
+    padding: 6px;
+  }
+
+  .LogOutBtn {
+    padding: 1px 13px;
+    margin-left: 5px;
+  }
+}

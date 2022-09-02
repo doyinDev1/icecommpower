@@ -1,4 +1,4 @@
-import { Fragment , useState} from 'react';
+import { Fragment, useState } from 'react';
 
 import HeaderCartButton from './HeaderCartButton';
 import storeImage from '../assets/images/store.jpeg';
@@ -15,19 +15,15 @@ const Header = (props) => {
   };
   return (
     <Fragment>
-        {cartIsShown && <Cart onClose={hideCartHandler} />}
-        {/* <Cart/> */}
-        {/* {console.log(cartIsShown)} */}
-
-      <header className={classes.header}>
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
+        <header className={classes.header}>
         <h1>ICE COMMERCE</h1>
-
-        <HeaderCartButton 
-        onClick={showCartHandler} 
+        <HeaderCartButton
+          onClick={showCartHandler}
         />
       </header>
       <div className={classes.main_image}>
-        <img src={storeImage} alt='A table full of deliciousl food!' />
+      <img src={storeImage} alt='A table full of deliciousl food!' />
       </div>
     </Fragment>
   );

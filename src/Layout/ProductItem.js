@@ -20,7 +20,7 @@ const ProductItem = (props) => {
   return (
     <>
       <li>
-         <div className={classes.card}>
+        <div className={classes.card}>
           <div className={classes.img}>
             <img src={props.image} className="poster" alt="ime" width={100} />
           </div>
@@ -29,9 +29,9 @@ const ProductItem = (props) => {
             <h4 className={classes.price}>{price}</h4>
             <h5 className={classes.rating}>Rating: {props.rating.rate}</h5>
           </div>
-        <div>
-          <ProductItemForm onAddToCart={addToCartHandler} />
-        </div>
+          <div>
+            <ProductItemForm onAddToCart={addToCartHandler} />
+          </div>
 
         </div>
       </li>

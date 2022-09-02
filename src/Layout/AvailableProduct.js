@@ -14,7 +14,7 @@ const AvailableProduct = () => {
   const [loading, setLoading] = useState(true)
   const [selectCategories, setSelectCategories] = useState(null)
 
-// fetch all products to be displayed in user dashboard
+  // fetch all products to be displayed in user dashboard
   const getProducts = () => {
     axios
       .get(`${Config.url.API_URL}/products`)
@@ -32,8 +32,8 @@ const AvailableProduct = () => {
       });
   }
 
-    // get categories tof products, it should be fetched once
-  const getCategories = () => { 
+  // get categories tof products, it should be fetched once
+  const getCategories = () => {
     axios
       .get(`${Config.url.API_URL}/products/categories`)
       .then((res) => {
@@ -46,7 +46,7 @@ const AvailableProduct = () => {
         toast.error(errMsg);
       });
   }
-// re-renders when you select a category and returns category items
+  // re-renders when you select a category and returns category items
   const fetchCategories = () => {
     setLoading(true)
     axios
@@ -102,22 +102,27 @@ const AvailableProduct = () => {
 
   return (
     <section className={classes.product}>
-      <div className={classes.category}>
-{/* get selected category from dropdown */}
-        <select onChange={(e) => { setSelectCategories(e.target.value) }}>
-          <option selected disabled>View By Categories</option>
-          {categories?.map((category) => (
-            <>
-              <option>{capitalizeFirstLetter(category)}</option>
-            </>
-          ))}
-        </select>
-        {selectCategories !== null &&
-          <div className={classes.filter}>
-            <h6>filtering by {selectCategories}</h6>
-            <button onClick={doReset}>Reset</button>
-          </div>
-        }
+      <div className={classes.filterMain}>
+        <div className={classes.productText}>
+          <h3>All {selectCategories} products</h3>
+        </div>
+        <div className={classes.category}>
+          {/* get selected category from dropdown */}
+          <h4 className={classes.filter}>Filter by Categories</h4>
+          <select defaultValue="View By Categories" onChange={(e) => { setSelectCategories(e.target.value) }}>
+            <option disabled>View By Categories</option>
+            {categories?.map((category, index) => (
+              <>
+                <option key={index}>{capitalizeFirstLetter(category)}</option>
+              </>
+            ))}
+          </select>
+          {selectCategories !== null &&
+            <div className={classes.filterButton}>
+              <button className={classes.button} onClick={doReset}>Reset</button>
+            </div>
+          }
+        </div>
       </div>
 
       <Card>
@@ -125,7 +130,6 @@ const AvailableProduct = () => {
           <div className={classes.loading}>
             <SpinnerCustom />
           </div>
-
         }
         <ul>{productList}</ul>
       </Card>
