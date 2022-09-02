@@ -6,15 +6,16 @@ import axios from 'axios';
 import { Config } from '../Config/Config'
 import { toast } from 'react-hot-toast';
 import SpinnerCustom from '../components/SpinnerCustom/SpinnerCustom';
-
+import { capitalizeFirstLetter } from '../helpers/capitalizeFirstLetter';
 const AvailableProduct = () => {
 
-  // get product detail from api
   const [data, setData] = useState()
+  const [categories, setCategories] = useState()
   const [loading, setLoading] = useState(true)
+  const [selectCategories, setSelectCategories] = useState(null)
 
-  useEffect(() => {
-
+// fetch all products to be displayed in user dashboard
+  const getProducts = () => {
     axios
       .get(`${Config.url.API_URL}/products`)
       .then((res) => {
@@ -26,13 +27,57 @@ const AvailableProduct = () => {
           ? err?.message
           : 'Failed to fetch';
         toast.error(errMsg);
-        toast.error('try again');
         setLoading(false)
 
       });
+  }
+
+    // get categories tof products, it should be fetched once
+  const getCategories = () => { 
+    axios
+      .get(`${Config.url.API_URL}/products/categories`)
+      .then((res) => {
+        setCategories(res.data)
+      })
+      .catch((err) => {
+        const errMsg = 'try again'
+          ? err?.message
+          : 'Failed to fetch';
+        toast.error(errMsg);
+      });
+  }
+// re-renders when you select a category and returns category items
+  const fetchCategories = () => {
+    setLoading(true)
+    axios
+      .get(`${Config.url.API_URL}/products/category/${selectCategories.toLowerCase()}`)
+      .then((res) => {
+        setLoading(false)
+        setData(res.data)
+      })
+      .catch((err) => {
+        const errMsg = 'try again'
+          ? err?.message
+          : 'Failed to fetch';
+        toast.error(errMsg);
+      });
+  }
 
 
-  }, [])
+  useEffect(() => {
+    //to avoid re-rendering check if data has been loaded 
+    if (!data) {
+      getProducts()
+
+    }
+    getCategories()
+
+    if (selectCategories != null) {
+
+      fetchCategories()
+    }
+
+  }, [!data, selectCategories])
 
 
   const productList = data?.map((product) => (
@@ -47,9 +92,34 @@ const AvailableProduct = () => {
     />
 
   ));
+  // reset dropdown and renders all products from api
+  const doReset = () => {
+    setLoading(true)
+    getProducts()
+    setSelectCategories(null)
+
+  }
 
   return (
     <section className={classes.product}>
+      <div className={classes.category}>
+{/* get selected category from dropdown */}
+        <select onChange={(e) => { setSelectCategories(e.target.value) }}>
+          <option selected disabled>View By Categories</option>
+          {categories?.map((category) => (
+            <>
+              <option>{capitalizeFirstLetter(category)}</option>
+            </>
+          ))}
+        </select>
+        {selectCategories !== null &&
+          <div className={classes.filter}>
+            <h6>filtering by {selectCategories}</h6>
+            <button onClick={doReset}>Reset</button>
+          </div>
+        }
+      </div>
+
       <Card>
         {loading &&
           <div className={classes.loading}>

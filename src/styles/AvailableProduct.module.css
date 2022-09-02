@@ -15,7 +15,11 @@
   justify-content: center;
 
 }
-
+.category{
+  margin: 2rem auto;
+  flex-direction: column;
+  display: block;
+}
 .card{
   display: flex;
   flex-wrap: wrap;
