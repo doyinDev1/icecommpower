@@ -5,7 +5,7 @@ import { Modal } from 'react-bootstrap'
 import axios from 'axios'
 import { Config } from '../../Config/Config'
 import toast from 'react-hot-toast'
-const EditUserModal = ({ editModal, selectedUser, hideEditModal }) => {
+const EditUserModal = ({ editModal, selectedUser, hideEditModal, setEditModal }) => {
 	const [loading, setLoading] = useState(false);
 
 	const {
@@ -45,9 +45,10 @@ const EditUserModal = ({ editModal, selectedUser, hideEditModal }) => {
 			)
 			.then((res) => {
 				// although users lists won't be updatd but we return a success message
-				toast.success('User Successfully added');
+				toast.success('User Successfully updated');
 				reset();
 				setLoading(false);
+				setEditModal(false)
 			})
 			.catch((err) => {
 				const errMsg = err.response.statusText
