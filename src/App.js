@@ -15,8 +15,6 @@ function App() {
           <Route exact path="/admin" element={<AdminDashboard />} />
         </Routes>
       </Router>
-
-
       <Toaster />
     </div>
   );

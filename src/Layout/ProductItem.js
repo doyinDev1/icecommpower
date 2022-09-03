@@ -22,7 +22,7 @@ const ProductItem = (props) => {
       <li>
         <div className={classes.card}>
           <div className={classes.img}>
-            <img src={props.image} className="poster" alt="ime" width={100} />
+            <img src={props.image} className={classes.poster} alt="products" width={100} />
           </div>
           <h2 className={classes.title}>{props.name}</h2>
           <div className={classes.price}>
