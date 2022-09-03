@@ -3,6 +3,7 @@ import Login from '../src/pages/Login/index'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import User from './pages/User/User'
 import AdminDashboard from './pages/AdminDashboard/AdminDashboard';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

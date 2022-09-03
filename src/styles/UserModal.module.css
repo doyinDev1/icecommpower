@@ -1,0 +1,109 @@
+/* NEW CREATE FORM MODAL STYLES */
+.ModalTitle {
+	color: var(--color-blue);
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+}
+
+.ModalTitle > p, .ModalBody > ul > li, .ModalBody > p {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.ModalBody > ul {
+	list-style-type: square;
+}
+
+.FormArea {
+	width: 100%;
+}
+
+.InputField {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+.InputField label {
+	color: var(--color-blue);
+	font-weight: 700;
+	text-transform: capitalize;
+	font-size: 14px;
+	margin-bottom: 3px;
+}
+
+.InputField input,
+.InputField textarea,
+.InputField select {
+	border: 2px solid #999;
+	padding: 10px;
+	border-radius: 3px;
+	font-size: 10px;
+	outline: none;
+	transition: all ease-in-out 0.4s;
+}
+
+.InputField input:focus,
+.InputField textarea:focus,
+.InputField select:focus {
+	border: 3px solid var(--color-orange);
+}
+
+.FormArea button {
+	border: none;
+	outline: none;
+	font-family: inherit;
+	font-weight: 500;
+	text-transform: uppercase;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 10px;
+	background-color: var(--color-blue);
+	color: #fff;
+	padding: 10px;
+	width: 100%;
+	transition: all ease-in-out 0.4s;
+}
+
+.FormArea button:hover {
+	background-color: var(--color-blue);
+
+}
+
+.FormArea button:disabled {
+	background-color: #bbb;
+}
+
+.ErrorMsg {
+	color: red;
+	font-size: 10px;
+	font-weight: 500;
+	padding: 3px;
+	margin: 0;
+}
+
+
+@media screen and (min-width: 768px) {
+	.ModalTitle {
+		font-size: 22px;
+	}
+
+	.ModalBody > ul > li, .ModalBody > p {
+		font-size: 16px;
+	}
+
+	.InputField label {
+		font-size: 16px;
+	}
+	
+	.FormArea button,
+	.InputField input,
+	.InputField textarea,
+	.InputField select {
+		font-size: 14px;
+	}
+}

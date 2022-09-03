@@ -63,23 +63,19 @@ const AvailableProduct = () => {
       });
   }
 
-
   useEffect(() => {
     //to avoid re-rendering check if data has been loaded 
     if (!data) {
       getProducts()
-
     }
     getCategories()
 
     if (selectCategories != null) {
-
       fetchCategories()
     }
 
   }, [!data, selectCategories])
-
-
+  
   const productList = data?.map((product) => (
     <ProductItem
       key={product.id}

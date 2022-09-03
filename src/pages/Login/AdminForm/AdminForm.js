@@ -52,7 +52,6 @@ function AdminForm({ handleUserButton }) {
 					: 'Failed to Login!';
 				toast.error(errMsg);
 				setLoading(false);
-				console.log(err)
 			});
 	};
 
