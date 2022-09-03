@@ -35,12 +35,9 @@ function CommonForm({ handleUserButton }) {
 			password: data.password
 		};
 		setLoading(true);
-		console.log(myFormData)
 		axios
 			.post(`${Config.url.API_URL}/auth/login`, myFormData)
 			.then((res) => {
-
-				console.log(res)
 				const userData = JSON.stringify({
 					token: res.data.token,
 				});
@@ -56,7 +53,6 @@ function CommonForm({ handleUserButton }) {
 					: 'Failed to Login!';
 				toast.error(errMsg);
 				setLoading(false);
-				console.log(err)
 
 			});
 	};

@@ -41,8 +41,7 @@ const AddUsers = () => {
                 params
             )
             .then((res) => {
-                console.log(res)
-                // although users lists won't be updatd but we return a success message
+                // although users lists won't be updated but we return a success message
                 toast.success('User Successfully added');
                 reset();
                 setLoading(false);
@@ -51,7 +50,6 @@ const AddUsers = () => {
                 const errMsg = err.response.statusText
                     ? err.code
                     : 'Failed to fetch';
-                console.log(err);
                 setLoading(false);
                 toast.error(errMsg);
             });

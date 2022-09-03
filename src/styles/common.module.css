@@ -1,0 +1,210 @@
+.SectionContainer {
+    width: 100%;
+    max-width: 2050px;
+    margin: 0 auto;
+}
+
+.SectionTitle {
+    background-color: var(--color-blue);
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.Breadcrumb {
+    padding: 0 20px;
+}
+
+.Breadcrumb a {
+    color: var(--color-blue);
+}
+
+.TableWrapper {
+    position: relative;
+    margin-top: 20px;
+    padding: 10px;
+    overflow: auto;
+    background-color: white;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    box-shadow: rgba(47, 47, 47, 0.1) 0px 4px 6px -1px, rgba(69, 69, 69, 0.06) 0px 2px 4px -1px;
+}
+
+.TableWrapper:hover {
+    border: 2px solid #777;
+}
+
+.TableExtras {
+	padding: 10px 0;
+    margin-top: 35px;
+	border-bottom: none;
+}
+
+.TableExtras > h3 {
+	margin: 0;
+	font-size: 11px;
+    font-weight: 600;
+	text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    border-top-left-radius: 10px;
+    background-color: var(--color-orange);
+    color: white;
+}
+
+.TableInputs {
+    padding: 5px 0;
+	flex: 1;
+}
+
+.TableInputs > input {
+	padding: 0 10px;
+	height: 40px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    width: 100%;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.TableInputs > input:focus {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 2px solid var(--color-blue);
+}
+
+.TableInputs > button {
+    padding: 0 12px;
+	height: 35px;
+	margin-left: auto;
+    color: white;
+    background-color: var(--color-blue);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 12px;
+	font-weight: 700;
+    transition: all 0.4s ease-in-out;
+}
+
+.TableInputs > button:hover {
+    border-color: transparent;
+    background-color: var(--color-blue);
+    color: white;
+}
+
+.TableInputs > button:disabled {
+    background-color: #eee;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.Table {
+    min-width: 950px;
+}
+
+.Table tr {
+    font-size: 13px;
+}
+
+.Table > thead > tr > th {
+    background-color: whitesmoke;
+    color: #555;
+    border: none;
+    border-bottom: 2px solid #777 !important;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.Table > tbody > tr > td {
+    padding: 10px;
+    font-size: 12px;
+}
+
+.Table > tbody > tr > td > button {
+    cursor: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .SectionTitle {
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+
+    .TableWrapper {
+        padding: 20px 30px;
+    }
+
+    .Table {
+        min-width: 1300px;
+    }
+
+    .Table tr {
+        font-size: 15px;
+    }
+
+    .TableExtras {
+		display: flex;
+        justify-content: space-between;
+	    align-items: center;
+	}
+
+	.TableExtras > h3 {
+		font-size: 13px;
+        padding: 15px 20px;
+	}
+
+    .TableInputs {
+        text-align: right;
+    }
+
+    .TableInputs > input {
+        width: 25%;
+    }
+
+    .TableInputs > button {
+		height: 40px;
+	}
+
+    .Table > thead > tr > th {
+        font-size: 15px;
+    }
+
+    .Table > tbody > tr > td {
+        font-size: 14px;
+    }
+
+    .TableInputs > button {
+        font-size: 13px;
+    }
+}
+
+.DataError {
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.DataError > p {
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+    padding: 7px 30px;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: #e9cdcd9c;
+}
