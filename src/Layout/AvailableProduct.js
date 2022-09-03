@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Config } from '../Config/Config'
 import { toast } from 'react-hot-toast';
 import SpinnerCustom from '../components/SpinnerCustom/SpinnerCustom';
+import { Button } from 'react-bootstrap';
 import { capitalizeFirstLetter } from '../helpers/capitalizeFirstLetter';
 const AvailableProduct = () => {
 
@@ -115,7 +116,7 @@ const AvailableProduct = () => {
           </select>
           {selectCategories !== null &&
             <div className={classes.filterButton}>
-              <button className={classes.button} onClick={doReset}>Reset</button>
+              <Button className={classes.button} onClick={doReset}>Reset</Button>
             </div>
           }
         </div>
