@@ -19,6 +19,7 @@ const AdminDashboardHeader = ({ setCurrentPage, pages }) => {
 		setCurrentPage(id);
 		localStorage.setItem('currentPage', id);
 		setActiveTabId(id);
+		console.log(id)
 	};
 	return (
 		<header className={classes.DashboardHeader}>

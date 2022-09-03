@@ -5,7 +5,7 @@ import classes from '../../styles/Dashboard.module.css';
 
 import AdminDashboardHeader from './AdminDashboardHeader';
 const AdminDashboard = () => {
-    // set page id to view current viewing component
+    // set current page id to current viewing component
     const [currentPage, setCurrentPage] = useState(
         localStorage.getItem('currentPage') ? Number(localStorage.getItem('currentPage')) : 0
     );
@@ -13,16 +13,14 @@ const AdminDashboard = () => {
     const pages = [
 
         {
-            id: 1,
+            id: 0,
             title: 'View Users',
-            Icon: Error,
             page: <ViewUsers />,
         },
         {
-            id: 2,
+            id: 1,
             title: 'Add Users',
-            Icon: Error,
-            page: <AddUsers />,
+            page: <AddUsers setCurrentPage={setCurrentPage} />,
         },
     ];
 

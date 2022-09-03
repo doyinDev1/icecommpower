@@ -7,7 +7,7 @@ import Loader from '../../components/SpinnerCustom/SpinnerCustom';
 import classes from '../../styles/CreateUsers.module.css';
 
 
-const AddUsers = () => {
+const AddUsers = ({ setCurrentPage}) => {
     const { handleSubmit, register, formState, reset } = useForm();
     const { errors } = formState;
     const [loading, setLoading] = useState(false);
@@ -45,6 +45,7 @@ const AddUsers = () => {
                 toast.success('User Successfully added');
                 reset();
                 setLoading(false);
+                setCurrentPage(0)
             })
             .catch((err) => {
                 const errMsg = err.response.statusText
