@@ -7,7 +7,7 @@ const HeaderCartButton = (props) => {
   const cartCtx = useContext(CartContext);
 
   const { items } = cartCtx;
-
+  // add items to display on cart
   const numberOfCartItems = items.reduce((curNumber, item) => {
     return curNumber + item.amount;
   }, 0);
@@ -15,6 +15,7 @@ const HeaderCartButton = (props) => {
   const btnClasses = `${classes.button} ${btnIsHighlighted ? classes.bump : ''}`;
 
   useEffect(() => {
+    //logic to handle bump animation when an item is added to cart
     if (items.length === 0) {
       return;
     }
@@ -36,7 +37,7 @@ const HeaderCartButton = (props) => {
       <span className={classes.icon}>
         <CartIcon />
       </span>
-      <span>Your Cart</span>
+      <span className={classes.text}>Your Cart</span>
       <span className={classes.badge}>{numberOfCartItems}</span>
     </button>
   );

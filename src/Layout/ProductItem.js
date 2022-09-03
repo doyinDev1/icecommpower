@@ -1,4 +1,3 @@
-// import classes from '../styles/ProductItem.css';
 import classes from '../styles/Card2.module.css';
 import ProductItemForm from './ProductItemForm';
 import { useContext } from 'react';
@@ -7,8 +6,7 @@ const ProductItem = (props) => {
   const cartCtx = useContext(CartContext);
   const price = `$${props.price.toFixed(2)}`;
   const addToCartHandler = amount => {
-
-
+    
     cartCtx.addItem({
       id: props.id,
       name: props.name,
