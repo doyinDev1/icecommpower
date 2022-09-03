@@ -44,7 +44,7 @@ const EditUserModal = ({ editModal, selectedUser, hideEditModal, setEditModal })
 				params
 			)
 			.then((res) => {
-				// although users lists won't be updatd but we return a success message
+				// although users lists won't be updated but we return a success message
 				toast.success('User Successfully updated');
 				reset();
 				setLoading(false);
