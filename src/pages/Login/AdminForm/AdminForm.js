@@ -61,7 +61,7 @@ function AdminForm({ handleUserButton }) {
 				<div className={classes.Lorem}>
 					<img
 						src="https://res.cloudinary.com/naijakids/image/upload/v1662028652/image001_ihlem9.png"
-						alt="ice commerce banner"
+						alt="ice commercial banner"
 						width={200}
 						height={100}
 					/>

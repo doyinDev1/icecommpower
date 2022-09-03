@@ -16,13 +16,13 @@ const Header = (props) => {
     <>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
         <header className={classes.header}>
-        <h1>ICE COMMERCE STORE</h1>
+        <h1>ICE COMMERCIAL STORE</h1>
         <HeaderCartButton
           onClick={showCartHandler}
         />
       </header>
       <div className={classes.main_image}>
-      <img src={storeImage} alt='ice commerce store!' />
+      <img src={storeImage} alt='ice commercial store!' />
       </div>
     </>
   );

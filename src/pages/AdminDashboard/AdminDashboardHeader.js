@@ -23,7 +23,7 @@ const AdminDashboardHeader = ({ setCurrentPage, pages }) => {
 	return (
 		<header className={classes.DashboardHeader}>
 			<a href="/" className={classes.Brand}>
-				<img alt="Ice Commerce" src="https://res.cloudinary.com/naijakids/image/upload/v1662028652/image001_ihlem9.png" className={classes.Logo} />
+				<img alt="Ice Commercial" src="https://res.cloudinary.com/naijakids/image/upload/v1662028652/image001_ihlem9.png" className={classes.Logo} />
 			</a>
 
 			<nav className={classes.DashboardNav}>
