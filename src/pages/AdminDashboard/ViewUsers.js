@@ -163,6 +163,7 @@ const ViewUsers = () => {
                     editModal={editModal}
                     selectedUser={selectedUser}
                     hideEditModal={hideEditModal}
+                    setEditModal={setEditModal}
                 />
             </>
         </div>
