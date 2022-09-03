@@ -5,7 +5,6 @@ import { useRef, useState } from 'react';
 const ProductIemForm = (props) => {
 
     const [amountIsValid, setAmountIsValid] = useState(true);
-
     const amountInputRef = useRef();
 
     const submitHandler = event => {

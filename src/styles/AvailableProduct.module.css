@@ -1,5 +1,4 @@
 .product {
-  /* max-width: 85rem; */
   width: 90%;
   margin: 2rem auto;
   animation: product-appear 1s ease-out forwards;
@@ -25,8 +24,7 @@
   display: block;
   color: var(--color-blue);
 }
-.button{
-}
+
 .productText{
   margin: 2rem 0;
   color: var(--color-blue);
@@ -56,4 +54,15 @@ justify-content: center;
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@media screen and (max-width: 414px) {
+.productText h3{
+font-size: 1rem;
+}
+.filter{
+  font-size: 1rem;
+}
+.category select{
+  font-size: 0.8rem;}
 }

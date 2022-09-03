@@ -5,11 +5,11 @@ import classes from '../../styles/Dashboard.module.css';
 
 import AdminDashboardHeader from './AdminDashboardHeader';
 const AdminDashboard = () => {
-// set page id to view current viewing component
+    // set page id to view current viewing component
     const [currentPage, setCurrentPage] = useState(
         localStorage.getItem('currentPage') ? Number(localStorage.getItem('currentPage')) : 0
     );
-// map pages to render different page with same header
+    // map pages to render different page with same header
     const pages = [
 
         {

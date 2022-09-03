@@ -89,7 +89,7 @@ const EditUserModal = ({ editModal, selectedUser, hideEditModal, setEditModal })
 				<Modal.Title
 					id='contained-modal-title-vcenter'
 					className={classes.ModalTitle}>
-					EDIT USER
+					UPDATE USER
 				</Modal.Title>
 			</Modal.Header>
 			<Modal.Body>

@@ -20,20 +20,20 @@ const AvailableProduct = () => {
     axios
       .get(`${Config.url.API_URL}/products`)
       .then((res) => {
-        setLoading(false)
-        setData(res.data)
+        setLoading(false);
+        setData(res.data);
       })
       .catch((err) => {
         const errMsg = 'try again'
           ? err?.message
           : 'Failed to fetch';
         toast.error(errMsg);
-        setLoading(false)
+        setLoading(false);
 
       });
   }
 
-  // get categories tof products, it should be fetched once
+  // get categories of products, it should be fetched once
   const getCategories = () => {
     axios
       .get(`${Config.url.API_URL}/products/categories`)
@@ -49,12 +49,12 @@ const AvailableProduct = () => {
   }
   // re-renders when you select a category and returns category items
   const fetchCategories = () => {
-    setLoading(true)
+    setLoading(true);
     axios
       .get(`${Config.url.API_URL}/products/category/${selectCategories.toLowerCase()}`)
       .then((res) => {
-        setLoading(false)
-        setData(res.data)
+        setLoading(false);
+        setData(res.data);
       })
       .catch((err) => {
         const errMsg = 'try again'
@@ -65,18 +65,18 @@ const AvailableProduct = () => {
   }
 
   useEffect(() => {
-    //to avoid re-rendering check if data has been loaded 
+    //to avoid re-rendering check if data has been loaded and if there's no data fetch the products
     if (!data) {
-      getProducts()
+      getProducts();
     }
-    getCategories()
+    getCategories();
 
     if (selectCategories != null) {
-      fetchCategories()
+      fetchCategories();
     }
 
   }, [!data, selectCategories])
-  
+
   const productList = data?.map((product) => (
     <ProductItem
       key={product.id}
@@ -91,9 +91,9 @@ const AvailableProduct = () => {
   ));
   // reset dropdown and renders all products from api
   const doReset = () => {
-    setLoading(true)
-    getProducts()
-    setSelectCategories(null)
+    setLoading(true);
+    getProducts();
+    setSelectCategories(null);
 
   }
 
@@ -107,7 +107,7 @@ const AvailableProduct = () => {
           {/* get selected category from dropdown */}
           <h4 className={classes.filter}>Filter by Categories</h4>
           <select defaultValue="View By Categories" onChange={(e) => { setSelectCategories(e.target.value) }}>
-            <option disabled>View By Categories</option>
+            <option disabled >View By Categories</option>
             {categories?.map((category, index) => (
               <>
                 <option key={index}>{capitalizeFirstLetter(category)}</option>

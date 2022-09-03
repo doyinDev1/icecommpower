@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 function Login() {
 
-
+// set active form to be user login form 
 	const [activeForm, setActiveForm] = useState('common');
 	
 	const handleUserButton = (e) => {

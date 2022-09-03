@@ -6,7 +6,6 @@ const Products = () => {
     <div>
         <ProductStore/>
         <AvailableProduct/>
-      
     </div>
   )
 }
