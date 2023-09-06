@@ -8,7 +8,7 @@ const prod = {
 const dev = {
 	url: {
 		API_URL:
-			'https://afternoon-ridge-35420.herokuapp.com/https://fakestoreapi.com',
+			'https://fakestoreapi.com',
 
 	},
 };
