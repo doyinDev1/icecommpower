@@ -72,7 +72,7 @@ const ViewUsers = () => {
         setSelectedUser({})
     }
 
-    const handleDeleteRoleplayUser = (user) => {
+    const handleDeleteUser = (user) => {
         Swal.fire({
             title: 'PLEASE CONFIRM!!!',
             text: `Are you sure you want to delete: ${user.name.firstname} ${user.name.lastname} ?`,
@@ -127,7 +127,7 @@ const ViewUsers = () => {
                                                     <td>
                                                         <IconButton
                                                             className={classes.ActionButton}
-                                                            onClick={() => handleDeleteRoleplayUser(allUserData)}
+                                                            onClick={() => handleDeleteUser(allUserData)}
                                                         >
                                                             <DeleteOutline
                                                                 style={{ fontSize: '17px', color: 'red' }}

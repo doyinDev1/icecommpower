@@ -11,6 +11,7 @@ const AddUsers = ({ setCurrentPage}) => {
     const { handleSubmit, register, formState, reset } = useForm();
     const { errors } = formState;
     const [loading, setLoading] = useState(false);
+    const [loadingErr, setLoadingErr] = useState(false);
 
     const onAddUserFormSubmit = (data) => {
 
